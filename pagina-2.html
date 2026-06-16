@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Espartana - God of War</title>
+    <link rel="stylesheet" href="pagina-2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="fire-particles"></div>
+
+    <nav class="menu">
+        <a href="index.html">Adição</a>
+        <a href="pagina-2.html" class="active">Subtração</a>
+        <a href="pagina-3.html">Multiplicação</a>
+        <a href="pagina-4.html">Divisão</a>
+    </nav>
+
+    <div class="calc-container">
+        <h1>Subtração</h1>
+        
+        <div class="display-battle">
+            <div id="visor1" class="visor active" onclick="selecionarVisor(1)">0</div>
+            <span class="operator">−</span>
+            <div id="visor2" class="visor" onclick="selecionarVisor(2)">0</div>
+        </div>
+
+        <div class="keypad-god">
+            <button class="btn-god" onclick="pressionarBotao('1', event)">1</button>
+            <button class="btn-god" onclick="pressionarBotao('2', event)">2</button>
+            <button class="btn-god" onclick="pressionarBotao('3', event)">3</button>
+            <button class="btn-god" onclick="pressionarBotao('4', event)">4</button>
+            <button class="btn-god" onclick="pressionarBotao('5', event)">5</button>
+            <button class="btn-god" onclick="pressionarBotao('6', event)">6</button>
+            <button class="btn-god" onclick="pressionarBotao('7', event)">7</button>
+            <button class="btn-god" onclick="pressionarBotao('8', event)">8</button>
+            <button class="btn-god" onclick="pressionarBotao('9', event)">9</button>
+            <button class="btn-god btn-clear" onclick="pressionarBotao('C', event)">C</button>
+            <button class="btn-god" onclick="pressionarBotao('0', event)">0</button>
+            <button class="btn-god btn-equal" onclick="calcularEspartano(event)">=</button>
+        </div>
+
+        <div id="resultado-combate" class="resultado-area">
+            <p class="placeholder-text">Aguardando o início da batalha...</p>
+        </div>
+    </div>
+
+    <script src="pagina-2.js"></script>
+</body>
+</html>
