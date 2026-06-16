@@ -1,57 +1,206 @@
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
 
 body {
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    /* Fundo escuro com um feixe de luz carmesim ao centro */
+    background: radial-gradient(circle at center, #260505 0%, #0a0a0c 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    color: #f3f4f6;
 }
 
 .container {
-    background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background: rgba(15, 15, 18, 0.95);
+    border: 2px solid #b30000;
+    border-radius: 6px; /* Bordas mais retas e agressivas */
+    box-shadow: 0 0 35px rgba(179, 0, 0, 0.4), inset 0 0 15px rgba(0, 0, 0, 0.8);
     padding: 30px;
     width: 100%;
     max-width: 400px;
     text-align: center;
+    position: relative;
 }
 
-h1 { color: #1f2937; margin-bottom: 20px; }
+/* Detalhe brilhante simulando o fio de uma lâmina no topo do painel */
+.container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff1a1a, transparent);
+    box-shadow: 0 0 10px #ff1a1a;
+}
 
-.form-group { text-align: left; margin-bottom: 15px; }
+h1 {
+    font-family: 'Cinzel', serif; /* Fonte estilo gótica/medieval */
+    color: #ff1a1a;
+    font-size: 28px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 12px rgba(255, 26, 26, 0.7), 2px 2px 2px #000;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 800;
+    color: #9ca3af;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
 input, select {
     width: 100%;
     padding: 12px;
-    border: 2px solid #e5e7eb;
-    border-radius: 8px;
+    background-color: #111115;
+    border: 1px solid #450a0a;
+    border-radius: 4px;
     font-size: 16px;
+    color: #ffffff;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
+input:focus, select:focus {
+    border-color: #ff1a1a;
+    box-shadow: 0 0 10px rgba(255, 26, 26, 0.4);
+    background-color: #16161c;
+}
+
+select option {
+    background-color: #111115;
+    color: #ffffff;
+}
+
+/* Botão principal de ação - Estilo Rebellion / Dante (Let's Rock!) */
 button {
     width: 100%;
-    padding: 12px;
-    background-color: #4f46e5;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
+    padding: 14px;
+    background: linear-gradient(135deg, #800000 0%, #b30000 100%);
+    color: #ffffff;
+    border: 1px solid #ff1a1a;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
     margin-top: 10px;
 }
 
+button:hover {
+    background: linear-gradient(135deg, #b30000 0%, #ff1a1a 100%);
+    box-shadow: 0 0 18px rgba(255, 26, 26, 0.7);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Painel de Navegação Inferior - Estilo Yamato / Vergil (Neon Blue) */
 .navegacao {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
-    margin-top: 20px;
+    gap: 12px;
+    margin-top: 24px;
+    border-top: 1px solid #2a2a35;
+    padding-top: 20px;
 }
 
-.nav-btn { width: 48%; background-color: #64748b; }
-.nav-btn:hover { background-color: #475569; }
+.nav-btn {
+    display: inline-block;
+    width: 48%;
+    padding: 12px;
+    background: linear-gradient(135deg, #111827 0%, #030712 100%);
+    border: 1px solid #00bfff;
+    color: #00bfff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
 
-ul { list-style: none; margin-top: 20px; max-height: 300px; overflow-y: auto; }
-li { background: #f3f4f6; padding: 10px; margin-bottom: 5px; border-radius: 4px; border-left: 4px solid #4f46e5; }
+.nav-btn:hover {
+    background: #00bfff;
+    color: #030712;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
+    transform: translateY(-1px);
+}
+
+/* Lista de resultados - Estilo Combo List (Smokin' Sexy Style!) */
+ul {
+    list-style: none;
+    margin-top: 20px;
+    max-height: 260px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+ul::-webkit-scrollbar {
+    width: 6px;
+}
+ul::-webkit-scrollbar-thumb {
+    background-color: #b30000;
+    border-radius: 3px;
+}
+
+li {
+    background: rgba(25, 25, 30, 0.7);
+    border: 1px solid #222;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 700;
+    border-left: 4px solid #ff1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px 2px #000;
+    /* Animação imitando um corte rápido de espada na tela */
+    animation: swordSlash 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Linhas pares alternam com o azul do Vergil */
+li:nth-child(even) {
+    background: rgba(20, 25, 35, 0.7);
+    border-left-color: #00bfff;
+}
+
+@keyframes swordSlash {
+    from { 
+        opacity: 0; 
+        transform: translateX(-20px) skewX(-15deg); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateX(0) skewX(0deg); 
+    }
+}
