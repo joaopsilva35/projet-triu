@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Fighter - Tabuada Arena</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="arcade-container">
+        <div class="hit-effect" id="hitEffect">HADOUKEN!</div>
+        
+        <h1>STREET FIGHTER</h1>
+        <div class="subtitle">PRODUTOR DE TABUADA INTELIGENTE</div>
+        
+        <nav class="menu-nav">
+            <a href="index.html" class="menu-link" id="link-soma">Soma (Ryu)</a>
+            <a href="pagina-2.html" class="menu-link" id="link-subtracao">Subtração (Ken)</a>
+            <a href="pagina-3.html" class="menu-link" id="link-multiplicacao">Multiplicação (Chun-Li)</a>
+            <a href="pagina-4.html" class="menu-link" id="link-divisao">Divisão (Guile)</a>
+        </nav>
+        
+        <div class="screen-container">
+            <div class="life-bar-container">
+                <span class="char-name" id="charName">RYU</span>
+                <div class="life-bar" id="lifeBar"></div>
+            </div>
+            
+            <div class="input-area">
+                <label for="numberInput" class="input-label">DIGITE O NÚMERO DE TREINO:</label>
+                <div class="input-row">
+                    <input type="number" id="numberInput" min="1" max="100" value="5" placeholder="Ex: 5">
+                    <button class="btn-fight" onclick="generateMultiplicationTable()">FIGHT!</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-container">
+            <div class="results-title" id="tableTitle">TABUADA DE SOMA</div>
+            <div class="table-grid" id="tableGrid">
+                <div class="empty-state">Insira um número e aperte FIGHT!</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

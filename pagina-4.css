@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Press+Start+2P&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    background: radial-gradient(circle, #1a2a1a 10%, #000 90%);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container da Máquina de Arcade */
+.arcade-container {
+    background: linear-gradient(135deg, #1e1e1e, #111);
+    border: 4px solid #f6b93b;
+    box-shadow: 0 0 30px rgba(5, 196, 107, 0.3), inset 0 0 20px #000;
+    border-radius: 10px;
+    width: 460px;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    font-family: 'Permanent Marker', sans-serif;
+    font-size: 2.3rem;
+    color: #ff3f34;
+    text-shadow: 3px 3px 0px #f6b93b, -1px -1px 0 #000;
+    margin-bottom: 5px;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 0.5rem;
+    color: #aaa;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* Menu de Abas por Links */
+.menu-nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+    background: #151515;
+    padding: 8px;
+    border-radius: 5px;
+    border: 2px dashed #05c46b;
+}
+
+.menu-link {
+    display: block;
+    background: #2a2a2a;
+    color: #ccc;
+    border: 2px solid #555;
+    padding: 10px 4px;
+    font-size: 0.48rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.menu-link:hover {
+    background: #05c46b;
+    color: #000;
+    border-color: #fff;
+    box-shadow: 0 0 8px #05c46b;
+}
+
+/* Link ativo correspondente à página atual */
+.menu-link.active-page {
+    background: #f6b93b;
+    color: #000;
+    border-color: #fff;
+    font-weight: bold;
+    box-shadow: 0 0 12px #f6b93b;
+}
+
+/* Painel da Tela Principal */
+.screen-container {
+    background-color: #000;
+    border: 3px solid #333;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.life-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.char-name {
+    font-size: 0.55rem;
+    color: #fffa65;
+}
+
+.life-bar {
+    height: 10px;
+    background: linear-gradient(90deg, #fffa65, #05c46b);
+    width: 100%;
+    border: 1px solid #fff;
+    transition: width 0.4s ease-out;
+}
+
+.input-area {
+    text-align: left;
+}
+
+.input-label {
+    font-size: 0.45rem;
+    color: #ff3f34;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="number"] {
+    flex: 1;
+    background: #222;
+    border: 2px solid #555;
+    color: #fffa65;
+    padding: 10px;
+    font-size: 0.8rem;
+    text-align: center;
+    border-radius: 4px;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #f6b93b;
+}
+
+.btn-fight {
+    background: linear-gradient(to bottom, #ea2027, #b33939);
+    border: 2px solid #ff3f34;
+    color: white;
+    padding: 0 25px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 3px 0 #5c0d0d;
+}
+
+.btn-fight:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #5c0d0d;
+}
+
+/* Monitor dos Resultados da Tabuada */
+.results-container {
+    background: #0e0e0e;
+    border: 2px solid #444;
+    border-radius: 5px;
+    padding: 15px;
+    min-height: 250px;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.results-title {
+    font-size: 0.6rem;
+    color: #fffa65;
+    border-bottom: 2px solid #333;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.table-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.table-line {
+    display: flex;
+    justify-content: space-between;
+    background: #1c1c1c;
+    padding: 8px 12px;
+    border-left: 4px solid #05c46b;
+    font-size: 0.6rem;
+    border-radius: 2px;
+    animation: slideIn 0.2s ease-out forwards;
+}
+
+.empty-state {
+    font-size: 0.5rem;
+    color: #666;
+    margin-top: 50px;
+    line-height: 1.5;
+}
+
+/* Animação do Golpe Especial */
+.hit-effect {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Permanent Marker', sans-serif;
+    font-size: 2.8rem;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0;
+    display: none;
+}
+
+.animate-hit {
+    display: block;
+    animation: fightPop 0.6s ease-out forwards;
+}
+
+@keyframes fightPop {
+    0% { transform: translate(-50%, -50%) scale(0.3); opacity: 0; }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-10px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
